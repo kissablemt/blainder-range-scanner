@@ -2,6 +2,7 @@ import numpy as np
 import bpy
 import os
 
+from . import export_ycb
 from . import export_csv
 from . import export_segmented_image
 from . import export_rendered_image
@@ -65,7 +66,7 @@ class Exporter:
         export_hdf.export(self.filePath, self.rawFileName + fileNameExtra, self.mappedData, self.exportNoiseData)
 
     def exportCSV(self):
-        export_csv.export(self.filePath, self.fileName, self.mappedData.transpose(), self.exportNoiseData)
+        export_csv.export(self.filePath, self.fileName, self.mappedData.transpose(), self.exportNoiseData, self.data)
 
     def exportSegmentedImage(self, exportPascalVoc):
         export_segmented_image.export(self.filePath, self.fileName, self.data, self.partIDs, exportPascalVoc, self.width, self.height)
@@ -75,3 +76,6 @@ class Exporter:
 
     def exportDepthmap(self, depthMinDistance, depthMaxDistance):
         export_depthmap.export(self. filePath, self.fileName, self.data, depthMinDistance, depthMaxDistance, self.width, self.height)
+
+    def exportYCB(self, scannerObject):
+        export_ycb.export(self.filePath, self.fileName, self.data, self.exportNoiseData, scannerObject, self.width, self.height)

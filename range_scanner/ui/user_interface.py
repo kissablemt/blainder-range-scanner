@@ -887,6 +887,12 @@ class ScannerProperties(PropertyGroup):
 
 
     # EXPORT
+    exportYCB: BoolProperty(
+        name="Export YCB Format",
+        description="Enable or disable if data should be saved into YCB format dataset",
+        default = False
+    ) 
+
     exportLAS: BoolProperty(
         name="Export .las file",
         description="Enable or disable if data should be saved into .las file format",
@@ -1544,7 +1550,7 @@ def scan_static(context,
 
         addMesh,
 
-        exportLAS, exportHDF, exportCSV, exportSingleFrames,
+        exportLAS, exportHDF, exportCSV, exportYCB, exportSingleFrames,
         exportRenderedImage, exportSegmentedImage, exportPascalVoc, exportDepthmap, depthMinDistance, depthMaxDistance, 
         dataFilePath, dataFileName,
         
@@ -1590,6 +1596,7 @@ def scan_static(context,
     properties.exportLAS = exportLAS
     properties.exportHDF = exportHDF
     properties.exportCSV = exportCSV
+    properties.exportYCB = exportYCB
     properties.exportSingleFrames = exportSingleFrames
     properties.exportRenderedImage = exportRenderedImage
     properties.exportSegmentedImage = exportSegmentedImage

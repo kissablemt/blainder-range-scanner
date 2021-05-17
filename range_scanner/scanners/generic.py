@@ -391,7 +391,6 @@ def startScan(context, dependencies_installed, properties, objectName):
 
         # reset view mode
         bpy.context.area.type = mode
-
         
         if not properties.exportSingleFrames:
             # we now have the final number of hits so we could shrink the array here
@@ -409,7 +408,7 @@ def startScan(context, dependencies_installed, properties, objectName):
 
             if len(slicedScannedValues) > 0:
                 # setup exporter with our data
-                if (properties.exportLAS and dependencies_installed) or (properties.exportHDF and dependencies_installed) or (properties.exportCSV and dependencies_installed):
+                if (properties.exportYCB and dependencies_installed) or (properties.exportLAS and dependencies_installed) or (properties.exportHDF and dependencies_installed) or (properties.exportCSV and dependencies_installed):
                     fileExporter = exporter.Exporter(properties.dataFilePath, "%s_frames_%d_to_%d" % (cleanedFileName, firstFrame, lastFrame), cleanedFileName, slicedScannedValues, targets, categoryIDs, partIDs, materialMappings, exportNoiseData, stepsX, stepsY)
 
                     print(fileExporter.fileName)
@@ -423,6 +422,9 @@ def startScan(context, dependencies_installed, properties, objectName):
 
                     if properties.exportCSV:
                         fileExporter.exportCSV()
+                    
+                    if properties.exportYCB:
+                        fileExporter.exportYCB(properties.scannerObject)
             else:
                 print("No data to export!")
     if properties.measureTime:

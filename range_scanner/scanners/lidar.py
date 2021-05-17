@@ -422,7 +422,7 @@ def performScan(context,
 
                 closestHit.categoryID = categoryIDs[closestHit.target["categoryID"]]
                 closestHit.partID = partIDs[partIDIndex]
-                    
+
                 if closestHit.wasReflected:
                     if debugLines:
                         generic.addLine(origin, closestHit.location)
@@ -620,6 +620,7 @@ def performScan(context,
                 fileExporter.exportHDF(fileNameExtra="_frames_%d_to_%d_single" % (firstFrame, lastFrame))
 
             if exportCSV:
+                print("Export in lidar.py\n" * 20)
                 fileExporter.exportCSV()
 
             if scannerType == generic.ScannerType.static.name:
