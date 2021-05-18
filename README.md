@@ -32,8 +32,8 @@ Use the `target` attribute to get all the attributes of the object.
 - [yuxng/YCB_Video_toolbox](https://github.com/yuxng/YCB_Video_toolbox)
 - [位姿估计数据集 YCB-Video Dataset](https://zhuanlan.zhihu.com/p/89951893)
 
-Blender matrix transform: `range_scanner/export/matrix.py` 
-YCB-Video Annotation Exporter: `range_scanner/export/export_ycb.py`
+Blender matrix transform: `range_scanner/export/matrix.py`   
+YCB-Video Annotation Exporter: `range_scanner/export/export_ycb.py` 
 
 <br /><br />
 
