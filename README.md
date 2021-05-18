@@ -5,14 +5,14 @@ Forked from [ln-12/blainder-range-scanner](https://github.com/ln-12/blainder-ran
 ## Modification
 ### Better Adaptation of Script
 Before modifying `range_scanner/scanners/generic.py`, running `blender -P scanner_script.py` will cause error.
-> line301 ~~`mode = bpy.context.area.type`~~
-> line304 ~~`bpy.context.area.type = "VIEW_3D"`~~
-> line393 ~~`bpy.context.area.type = mode`~~
+> line301 ~~`mode = bpy.context.area.type`~~ 
+> line304 ~~`bpy.context.area.type = "VIEW_3D"`~~ 
+> line393 ~~`bpy.context.area.type = mode`~~ 
 
 ### Add Custom Properties
 These two properties have low versatility.
-> ~~`hit.categoryID`~~
-> ~~`hit.partID`~~
+> ~~`hit.categoryID`~~ 
+> ~~`hit.partID`~~ 
 
 Add the properties to the objects inside Blender.
 For example:
