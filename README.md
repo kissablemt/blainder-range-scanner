@@ -3,6 +3,12 @@
 Forked from [ln-12/blainder-range-scanner](https://github.com/ln-12/blainder-range-scanner)
 
 ## Modification
+### Better Adaptation of Script
+Before modifying `range_scanner/scanners/generic.py`, running `blender -P scanner_script.py` will cause error.
+> line301 ~~`mode = bpy.context.area.type`~~
+> line304 ~~`bpy.context.area.type = "VIEW_3D"`~~
+> line393 ~~`bpy.context.area.type = mode`~~
+
 ### Add Custom Properties
 These two properties have low versatility.
 > ~~`hit.categoryID`~~
@@ -39,4 +45,11 @@ YCB-Video Annotation Exporter: `range_scanner/export/export_ycb.py`
 
 ## Introduction & Usage
 The detail is here 👉 [ln-12/blainder-range-scanner](https://github.com/ln-12/blainder-range-scanner/blob/main/README.md)
+<br /><br />
+
+## Demo
+1. Modify the module search path in the `scanner_script.py`
+2. Run `blender -P scanner_script.py`
+
+![Emitter](images/demo.jpg)
 <br /><br />

@@ -298,10 +298,10 @@ def startScan(context, dependencies_installed, properties, objectName):
             angularFractionPerFrame = properties.fovX
 
         # save current view mode
-        mode = bpy.context.area.type
+        # mode = bpy.context.area.type
 
         # set view mode to 3D to have all needed variables available
-        bpy.context.area.type = "VIEW_3D"
+        # bpy.context.area.type = "VIEW_3D"
 
         if properties.scannerType == ScannerType.rotating.name or properties.scannerType == ScannerType.sideScan.name:
             stepsX = properties.xStepDegree
@@ -390,7 +390,7 @@ def startScan(context, dependencies_installed, properties, objectName):
             startIndex += numberOfHits
 
         # reset view mode
-        bpy.context.area.type = mode
+        # bpy.context.area.type = mode
         
         if not properties.exportSingleFrames:
             # we now have the final number of hits so we could shrink the array here

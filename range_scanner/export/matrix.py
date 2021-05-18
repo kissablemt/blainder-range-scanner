@@ -16,7 +16,6 @@ father_path = os.path.abspath(os.path.dirname(current_path) + os.path.sep + ".")
 if father_path not in sys.path:
     sys.path.append(father_path)
 
-from utils import io as IO
 
 
 def get_sensor_size(camera):
@@ -177,7 +176,6 @@ def main():
     
     
 if __name__ == '__main__':
-    U.redirect_stdout()
     start_time = time.time()
     try:
         main()
@@ -185,4 +183,3 @@ if __name__ == '__main__':
     except Exception as e:
         print(e)
     print("RUN: {:.2f}s".format(time.time() - start_time))
-    U.recover_stdout()
